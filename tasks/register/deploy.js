@@ -1,3 +1,3 @@
 module.exports = function (grunt) {
-  grunt.registerTask('deploy', ['bower', 'stylus']);
+  grunt.registerTask('deploy', ['bower', 'copy:vendor', 'requirejs', 'stylus']);
 };

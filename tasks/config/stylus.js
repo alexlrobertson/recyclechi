@@ -15,7 +15,6 @@ module.exports = function(grunt) {
       options: stylusOptions,
       files: {
         'assets/css/critical.css': [
-          'bower_components/normalize.styl/normalize.styl',
           'stylus/critical/critical.styl'
         ]
       }
@@ -24,6 +23,7 @@ module.exports = function(grunt) {
       options: stylusOptions,
       files: {
         'assets/css/secondary.css': [
+          'bower_components/normalize.styl/normalize.styl',
           'stylus/secondary/secondary.styl'
         ]
       }

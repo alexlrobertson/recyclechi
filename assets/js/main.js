@@ -1,7 +1,7 @@
 (function (document) {
   requirejs.config({
     paths: {
-      angular: '//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min'
+      angular: '../../bower_components/angular/angular'
     },
     shim: {
       angular: {
