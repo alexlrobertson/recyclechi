@@ -1,0 +1,22 @@
+.loading-indicator
+  position   fixed
+  width      4em
+  height     4em
+
+  left 50%
+  top  50%
+
+  display none
+
+  path
+    fill $color-900
+
+  &.loading
+    display block
+    animation loading 1s ease-in-out infinite alternate
+
+@keyframes loading
+  from
+    opacity 0
+  to
+    opacity 1
