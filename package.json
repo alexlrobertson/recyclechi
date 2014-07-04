@@ -6,7 +6,7 @@
   "repository": "https://github.com/alexlrobertson/recyclechi.git",
   "scripts": {
     "start": "node index.js",
-    "postinstall": "./node_modules/grunt-cli/bin/grunt watch"
+    "postinstall": "./node_modules/grunt-cli/bin/grunt deploy"
   },
   "author": "Alex Robertson <alexleonardrobertson@gmail.com>",
   "license": "ISC",
