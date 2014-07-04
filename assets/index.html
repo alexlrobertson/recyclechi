@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
   <title>RecycleChi</title>
   <style>/* INLINE_HERE */</style>
 </head>
@@ -14,19 +14,7 @@
 
   <div class="container">
     <div class="drawers ng-cloak" ng-controller="DrawerCtrl">
-      <div class="drawer"
-        ng-repeat="drawer in drawers"
-        ng-class="{active: drawer.active}">
-        <div class="drawer-label" ng-click="drawer.active=!drawer.active" ng-bind="drawer.label"></div>
-        <div class="drawer-body">
-          <div class="drawer-explanation" ng-bind="drawer.explanation"></div>
-          <div class="radio" ng-repeat="option in drawer.options">
-            <label>
-              <input type="radio" name="{{drawer.name}}" value="{{option.value}}"> {{option.label}}
-            </label>
-          </div>
-        </div>
-      </div>
+      <rcyl-drawers></rcyl-drawers>
     </div>
   </div>
 

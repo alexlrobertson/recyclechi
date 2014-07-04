@@ -1,5 +1,5 @@
-define(['angular'], function (angular) {
-  return angular.module('recycle', [])
+define(['angular', 'fastclick'], function (angular, fastclick) {
+  return angular.module('recycle', [fastclick.name])
     .controller('DrawerCtrl', ['$scope', function ($scope) {
       $scope.drawers = [
         {
@@ -69,5 +69,11 @@ define(['angular'], function (angular) {
           ]
         }
       ];
-    }]);
+    }])
+  .directive('rcylDrawers', function () {
+    return {
+      restrict: 'E',
+      templateUrl: '/templates/drawer.html'
+    };
+  });
 });

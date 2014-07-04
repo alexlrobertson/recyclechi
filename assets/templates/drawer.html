@@ -1,0 +1,11 @@
+<div class="drawer" ng-repeat="drawer in drawers" ng-class="{active: drawer.active}">
+  <div class="drawer-label" fast-click="drawer.active=!drawer.active" ng-bind="drawer.label"></div>
+  <div class="drawer-body">
+    <div class="drawer-explanation" ng-bind="drawer.explanation"></div>
+    <div class="radio" ng-repeat="option in drawer.options">
+      <label>
+        <input type="radio" name="{{drawer.name}}" value="{{option.value}}"> {{option.label}}
+      </label>
+    </div>
+  </div>
+</div>
