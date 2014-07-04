@@ -1,7 +1,7 @@
 var connect       = require('connect'),
+  gzipStatic   = require('connect-gzip-static'),
   fs           = require('fs'),
-  connectRoute = require('connect-route'),
-  serveStatic  = require('serve-static');
+  connectRoute = require('connect-route');
 
 connect().use(connectRoute(function (router) {
   router.get('/', function (req, res) {
@@ -11,4 +11,4 @@ connect().use(connectRoute(function (router) {
       });
     });
   });
-})).use(serveStatic(__dirname + '/assets')).listen(process.env.PORT || 8080);
+})).use(gzipStatic(__dirname + '/assets')).listen(process.env.PORT || 8080);
