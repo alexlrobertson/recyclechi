@@ -1,0 +1,30 @@
+.radio,
+.checkbox
+  display        block
+  min-height     20px
+  padding-left   20px
+  margin-top     10px
+  margin-bottom  10px
+
+  label
+    display        inline
+    font-weight    normal
+    cursor         pointer
+
+$radio-checkbox-input
+  float          left
+  margin-left    -20px
+
+.radio,
+.radio-inline
+  input[type="radio"]
+    @extends $radio-checkbox-input
+
+.checkbox,
+.checkbox-inline
+   input[type="checkbox"]
+     @extends $radio-checkbox-input
+
+.radio + .radio,
+.checkbox + .checkbox
+  margin-top -5px
