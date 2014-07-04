@@ -17,85 +17,16 @@
 
     <p>All about recycling in Chicago</p>
 
-    <div class="drawers">
-      <div class="drawer active">
-        <div class="drawer-label">Can you Donate it?</div>
+    <div class="drawers" ng-controller="DrawerCtrl">
+      <div class="drawer"
+        ng-repeat="drawer in drawers"
+        ng-class="{active: drawer.active}">
+        <div class="drawer-label" ng-click="drawer.active=!drawer.active">{{drawer.label}}</div>
         <div class="drawer-body">
-          <div class="drawer-explanation">Is it one of these?</div>
-          <div class="radio">
+          <div class="drawer-explanation">{{drawer.explanation}}</div>
+          <div class="radio" ng-repeat="option in drawer.options">
             <label>
-              <input type="radio" name="eliminate" value="clothing"> Clothing
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="eliminate" value="diapers"> Diapers
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="eliminate" value="feminine-products"> Feminine hygeine products
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="eliminate" value="construction"> Construction materials
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="eliminate" value="paint"> Paint
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="eliminate" value="shopping-bags"> Shopping bags
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="eliminate" value="none"> None of the above
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="drawer active">
-        <div class="drawer-label">What type of material is it?</div>
-        <div class="drawer-body">
-          <p>What type of material is it?</p>
-          <div class="radio">
-            <label>
-              <input type="radio" name="material" value="plastic"> Plastic
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="material" value="styrofoam"> Styrofoam
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="material" value="paper"> Paper
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="material" value="glass"> Glass
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="material" value="metal"> Metal
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="material" value="cardboard"> Cardboard
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="material" value="other"> Don't quite know or something else
+              <input type="radio" name="{{drawer.name}}" value="{{option.value}}"> {{option.label}}
             </label>
           </div>
         </div>
@@ -103,5 +34,6 @@
     </div>
   </div>
 
+  <script async data-main="/js/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
 </body>
 </html>
