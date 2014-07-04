@@ -1,8 +1,42 @@
+input[type="radio"]
+  display        inline-block
+  vertical-align middle
+
+  width      1em
+  height     1em
+
+  margin-right .25em
+
+  appearance none
+
+  &:focus
+    outline 0
+
+  &::before
+    content    " "
+    display    inline-block
+
+    height     1em
+    width      1em
+
+    margin-right .25em
+
+    border     0.2em solid $gray
+    border-radius 50%
+
+    background transparent
+
+  &:checked::before
+    background $gray
+    border-color $ink
+
+  &:focus::before
+    border-color green
+
 .radio,
 .checkbox
   display        block
   min-height     20px
-  padding-left   20px
   margin-top     10px
   margin-bottom  10px
 
@@ -10,20 +44,6 @@
     display        inline
     font-weight    normal
     cursor         pointer
-
-$radio-checkbox-input
-  float          left
-  margin-left    -20px
-
-.radio,
-.radio-inline
-  input[type="radio"]
-    @extends $radio-checkbox-input
-
-.checkbox,
-.checkbox-inline
-   input[type="checkbox"]
-     @extends $radio-checkbox-input
 
 .radio + .radio,
 .checkbox + .checkbox
