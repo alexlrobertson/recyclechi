@@ -1,12 +1,18 @@
+.drawers
+  box-shadow 0 2px 5px rgba(0,0,0,.26)
+
 .drawer-label
   padding 0 1em
 
   line-height 2.5em
 
-  background  green
+  background  $color-400
   color       #fff
 
   cursor      pointer
+
+  .active &
+    background  $color-700
 
 .drawer-explanation
   line-height 2.5em
@@ -19,6 +25,8 @@
   overflow hidden
 
   background  #fff
+
+  transition max-height .2s
 
   .active &
     max-height 400px

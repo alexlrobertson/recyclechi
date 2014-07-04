@@ -63,7 +63,7 @@ define(['angular'], function (angular) {
               value: 'cardboard',
             },
             {
-              label: 'Don&rsquo;t quite know or some other material',
+              label: 'Don\'t quite know or some other material',
               value: 'other',
             },
           ]
