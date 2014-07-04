@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   var stylusOptions = {
-    compress: false,
+    // compress: false,
     // linenos: true,
     'paths': ['stylus'],
     'import': [
