@@ -15,4 +15,8 @@
       angular.bootstrap(document, [app.name]);
     });
   });
+
+  require(['styleloader'], function (styleloader) {
+    styleloader('/css/secondary.css');
+  });
 }(document));
