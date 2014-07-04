@@ -1,0 +1,19 @@
+{
+  "name": "recyclechi",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Alex Robertson <alexleonardrobertson@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.styl": "~3.0.0"
+  }
+}
