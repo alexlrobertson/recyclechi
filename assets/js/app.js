@@ -1,5 +1,29 @@
-define(['angular', 'fastclick'], function (angular, fastclick) {
-  return angular.module('recycle', [fastclick.name])
+define(['angular', 'fastclick', 'router'], function (angular, fastclick) {
+  return angular.module('recycle', [fastclick.name, 'ui.router'])
+    .config([
+      '$stateProvider',
+      '$urlRouterProvider',
+      '$locationProvider',
+      function ($stateProvider, $urlRouterProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
+
+        $urlRouterProvider.otherwise('/state1');
+
+        $stateProvider.state('home', {
+          url: '/',
+          templateUrl: '/templates/drawers.html',
+          controller: 'DrawerCtrl'
+        })
+        .state('about', {
+          url: '/about',
+          templateUrl: '/templates/about.html'
+        })
+        .state('blog', {
+          url: '/blog',
+          templateUrl: '/templates/blog.html'
+        });
+      }
+    ])
     .controller('DrawerCtrl', ['$scope', function ($scope) {
       $scope.drawers = [
         {

@@ -26,6 +26,16 @@ module.exports = function(grunt) {
       ],
       tasks: ['stylus'],
       options: watchOptions
+    },
+    js: {
+      files: [
+        'assets/js/*.js'
+      ],
+      exclude: ['assets/js/main-built.js'],
+      tasks: ['requirejs'],
+      options: {
+        spawn: false
+      }
     }
   });
 

@@ -16,6 +16,7 @@
   "dependencies": {
     "normalize.styl": "~3.0.0",
     "almond": "~0.2.9",
-    "angular": "~1.2.19"
+    "angular": "~1.2.19",
+    "angular-ui-router": "~0.2.10"
   }
 }

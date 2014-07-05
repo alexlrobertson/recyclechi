@@ -9,7 +9,16 @@
 <body>
 
   <nav class="navbar" role="nav">
-    <a href="/#!/" class="navbar-brand">RecycleChi</a>
+    <a href="/#/" class="navbar-brand">RecycleChi</a>
+
+    <ul class="navbar-menu">
+      <li class="menu-item">
+        <a href="/#/about" class="menu-link">About</a>
+      </li>
+      <li class="menu-item">
+        <a href="/#/blog" class="menu-link">Blog</a>
+      </li>
+    </ul>
   </nav>
 
   <div class="loading-indicator loading">
@@ -29,10 +38,8 @@
     </svg>
   </div>
 
-  <div class="container">
-    <div class="drawers ng-cloak" ng-controller="DrawerCtrl">
-      <rcyl-drawers></rcyl-drawers>
-    </div>
+  <div class="ui-view-container">
+    <div ui-view></div>
   </div>
 
   <script async src="/js/main-built.js"></script>
