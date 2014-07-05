@@ -2,7 +2,8 @@
   requirejs.config({
     paths: {
       angular: '../../bower_components/angular/angular',
-      router: '../../bower_components/angular-ui-router/release/angular-ui-router.min'
+      router: '../../bower_components/angular-ui-router/release/angular-ui-router.min',
+      animate: '../../bower_components/angular-animate/angular-animate.min'
     },
     shim: {
       angular: {

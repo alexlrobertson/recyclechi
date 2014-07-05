@@ -1,5 +1,5 @@
-define(['angular', 'fastclick', 'router'], function (angular, fastclick) {
-  return angular.module('recycle', [fastclick.name, 'ui.router'])
+define(['angular', 'fastclick', 'router', 'animate'], function (angular, fastclick) {
+  return angular.module('recycle', [fastclick.name, 'ui.router', 'ngAnimate'])
     .config([
       '$stateProvider',
       '$urlRouterProvider',
