@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         include:        [
           'main.js'
         ],
-        name: 'vendor/almond/almond',
+        name: 'main',
         out:  'assets/js/main-built.js',
         wrap: true
       }

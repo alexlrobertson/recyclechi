@@ -1,4 +1,10 @@
-define(['angular', 'fastclick', 'router', 'animate'], function (angular, fastclick) {
+define([
+  'angular',
+  'fastclick',
+  'marked',
+  'router',
+  'animate'
+], function (angular, fastclick, marked) {
   return angular.module('recycle', [fastclick.name, 'ui.router', 'ngAnimate'])
     .config([
       '$stateProvider',
@@ -16,7 +22,15 @@ define(['angular', 'fastclick', 'router', 'animate'], function (angular, fastcli
         })
         .state('about', {
           url: '/about',
-          templateUrl: '/templates/about.html'
+          templateUrl: '/templates/about.html',
+          controller: 'AboutCtrl',
+          resolve: {
+            content: ['$http', function ($http) {
+              return $http.get('/md/about.md').then(function (response) {
+                return marked(response.data);
+              });
+            }]
+          }
         })
         .state('blog', {
           url: '/blog',
@@ -24,6 +38,14 @@ define(['angular', 'fastclick', 'router', 'animate'], function (angular, fastcli
         });
       }
     ])
+    .controller('AboutCtrl', ['$scope', '$http', '$sce', 'content', function ($scope, $http, $sce, content) {
+      console.log(content);
+      $scope.body = '';
+
+      $http.get('/md/about.md').success(function (content) {
+        $scope.body = $sce.trustAsHtml(marked(content));
+      });
+    }])
     .controller('DrawerCtrl', ['$scope', function ($scope) {
       $scope.drawers = [
         {
